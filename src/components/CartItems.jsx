@@ -1,6 +1,6 @@
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { MdOutlineKeyboardArrowUp } from "react-icons/md";
-import { increase } from "../feature/cart/cartSlice";
+import { decrease, increase } from "../feature/cart/cartSlice";
 import { useDispatch } from "react-redux";
 
 const CartItems = ({ amount, id, img, price, title }) => {
@@ -25,7 +25,7 @@ const CartItems = ({ amount, id, img, price, title }) => {
           <MdOutlineKeyboardArrowUp />
         </button>
         <h3>{amount}</h3>
-        <button>
+        <button onClick={() => dispatch(decrease(id))}>
           <MdOutlineKeyboardArrowDown />
         </button>
       </div>
