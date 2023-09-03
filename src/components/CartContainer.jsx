@@ -6,6 +6,7 @@ const CartContainer = () => {
   const dispatch = useDispatch();
 
   const { cart, amount, total } = useSelector((state) => state.cart);
+  console.log(amount);
 
   if (amount < 1) {
     return (
@@ -28,7 +29,7 @@ const CartContainer = () => {
             <div className="flex justify-between">
               <div>total</div>
               <div>
-                <p>{total}</p>
+                <p> ${total.toFixed()}</p>
               </div>
             </div>
             <div className="text-center">
