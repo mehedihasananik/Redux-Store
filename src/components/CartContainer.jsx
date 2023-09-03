@@ -27,15 +27,15 @@ const CartContainer = () => {
             })}
             <hr />
             <div className="flex justify-between">
-              <div>total</div>
+              <div className="text-2xl font-bold">Total</div>
               <div>
-                <p> ${total.toFixed()}</p>
+                <p className="text-xl font-bold"> $ {total.toFixed()}</p>
               </div>
             </div>
             <div className="text-center">
               <button
                 onClick={() => dispatch(removeCart())}
-                className="text-lg border-none"
+                className="text-lg border-none bg-[#504ACC] text-white px-5 py-2 rounded-lg"
               >
                 Clear Cart
               </button>

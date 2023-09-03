@@ -10,7 +10,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-24">
           {/* store */}
           <div>
-            <h3 className="text-3xl">Redux Store</h3>
+            <h3 className="text-3xl">Store</h3>
           </div>
           {/* icon */}
           <div className="relative">
