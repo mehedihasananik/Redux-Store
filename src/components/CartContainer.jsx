@@ -7,7 +7,6 @@ const CartContainer = () => {
   const dispatch = useDispatch();
 
   const { cart, amount, total } = useSelector((state) => state.cart);
-  console.log(amount);
 
   if (amount < 1) {
     return (
