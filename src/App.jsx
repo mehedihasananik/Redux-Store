@@ -3,15 +3,25 @@ import "./App.css";
 import CartContainer from "./components/CartContainer";
 import Navbar from "./components/Navbar";
 import { useEffect } from "react";
-import { totalCalculations } from "./feature/cart/cartSlice";
+import { totalCalculations, getCartItems } from "./feature/cart/cartSlice";
+
+import Modals from "./components/Modals";
 
 function App() {
-  const dispath = useDispatch();
-  const { cart } = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
+  const { cart, isLoading } = useSelector((state) => state.cart);
 
   useEffect(() => {
-    dispath(totalCalculations());
+    dispatch(totalCalculations());
   }, [cart]);
+
+  useEffect(() => {
+    dispatch(getCartItems());
+  }, []);
+
+  if (isLoading) {
+    return <h3>...loading</h3>;
+  }
 
   return (
     <>
